@@ -69,7 +69,7 @@ public class DiscordBotService extends ListenerAdapter implements EventListener 
         Universe.get().sendMessage(com.hypixel.hytale.server.core.Message.join(ColorUtils.parseColorCodes(configuration.discordIngamePrefix), com.hypixel.hytale.server.core.Message.raw(author.getName() + ": " + message.getContentDisplay())));
     }
 
-    private void updateActivityPlayerCount() {
+    public void updateActivityPlayerCount() {
         int playerCount = Universe.get().getPlayerCount();
         var activityCount = Activity.customStatus("Player count: " + playerCount);
         getInstance().getJdaInstance().getPresence().setActivity(activityCount);
