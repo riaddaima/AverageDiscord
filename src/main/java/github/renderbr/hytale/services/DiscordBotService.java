@@ -70,12 +70,9 @@ public class DiscordBotService extends ListenerAdapter implements EventListener 
     }
 
     private void updateActivityPlayerCount() {
-        var defaultWorld = Universe.get().getDefaultWorld();
-        if (defaultWorld != null) {
-            int playerCount = defaultWorld.getPlayerCount();
-            var activityCount = Activity.customStatus("Player count: " + playerCount);
-            getInstance().getJdaInstance().getPresence().setActivity(activityCount);
-        }
+        int playerCount = Universe.get().getPlayerCount();
+        var activityCount = Activity.customStatus("Player count: " + playerCount);
+        getInstance().getJdaInstance().getPresence().setActivity(activityCount);
     }
 
     private void updateActivityDefault() {
