@@ -18,7 +18,7 @@ public class DiscordBridgeCommand extends AbstractCommandCollection {
 
     public DiscordBridgeCommand() {
         super("discordbridge", "server.commands.averagediscord.cmd.desc");
-        this.addAliases("gm", "agm", "groupman");
+        this.addAliases("db", "discord");
         this.addSubCommand(new ReloadCommand());
     }
 
