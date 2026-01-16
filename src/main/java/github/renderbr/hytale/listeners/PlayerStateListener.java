@@ -13,12 +13,14 @@ public class PlayerStateListener {
 
     public static void onPlayerJoin(PlayerReadyEvent event) {
         if(AverageDiscord.instance.getChatChannel() != null) {
+            AverageDiscord.instance.updateActivityPlayerCount();
             AverageDiscord.instance.getChatChannel().sendMessage(":arrow_right: " + event.getPlayer().getDisplayName() + " joined the server!").queue();
         }
     }
 
     public static void onPlayerLeave(PlayerDisconnectEvent event){
         if(AverageDiscord.instance.getChatChannel() != null) {
+            AverageDiscord.instance.updateActivityPlayerCount();
             AverageDiscord.instance.getChatChannel().sendMessage(":arrow_left: " + event.getPlayerRef().getUsername() + " left the server!").queue();
         }
     }
